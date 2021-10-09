@@ -1,7 +1,8 @@
 # WeatherDecode
+Decodes raw weather data in METAR format as specified below
 
 ## Format
-Decodes raw weather data in METAR format as specified below. The following is taken from the U.S. Federal Meteorological Handbook No. 1 — Surface Weather Observations and Reports (September 2005): [Link](https://web.archive.org/web/19990420051036/http://www.ofcm.gov/fmh-1/fmh1.htm)
+The following is taken from the U.S. Federal Meteorological Handbook No. 1 — Surface Weather Observations and Reports (September 2005): [Link](https://web.archive.org/web/19990420051036/http://www.ofcm.gov/fmh-1/fmh1.htm)
 
 ### METAR/SPECI Code
 METAR or SPECI_CCCC\_YYGGggZ\_AUTO or COR\_dddff(f)Gf<sub>m</sub>f<sub>m</sub>(f<sub>m</sub>)KT_d<sub>n</sub>d<sub>n</sub>d<sub>n</sub>Vd<sub>x</sub>d<sub>x</sub>d<sub>x</sub>\_VVVVVSM\_[RD<sub>R</sub>D<sub>R</sub>/V<sub>R</sub>V<sub>R</sub>V<sub>R</sub>V<sub>R</sub>FT or RD<sub>R</sub>D<sub>R</sub>/V<sub>N</sub>V<sub>N</sub>V<sub>N</sub>V<sub>N</sub>VV<sub>X</sub>V<sub>X</sub>V<sub>X</sub>V<sub>X</sub>FT]\_w'w'\_[N<sub>s</sub>N<sub>s</sub>N<sub>s</sub>h<sub>s</sub>h<sub>s</sub>h<sub>s</sub> or VVh<sub>s</sub>h<sub>s</sub>h<sub>s</sub> or SKC/CLR]\_T'T'/T'<sub>d</sub>T'<sub>d</sub>\_AP<sub>h</sub>P<sub>h</sub>P<sub>h</sub>P<sub>h</sub>\_RMK\_(Automated, Manual, Plain Language)\_(Additive Data and Automated Maintenance Indicators)
