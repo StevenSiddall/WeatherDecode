@@ -29,6 +29,33 @@ def decodeModifier(modifierIn: str):
         return 'COR -- Report was corrected'
     return -1
 
+def decodeWind(windIn: str):
+    gustStr = ''
+    if 'G' in windIn:
+        # Gust portion is present
+        windSplit = windIn.split('G')
+        windIn = windSplit[0]
+        gustStr = ' with gusts to ' + windSplit[1][:-2] + 'KT'
+    else:
+        windIn = windIn[:-2]
+
+    if windIn == '00000':
+        return 'Calm wind' + gustStr
+
+    return 'Wind from ' + windIn[:3] + ' at ' + windIn[3:] + 'KT' + gustStr
+
+def decodeVariableWind(varWindIn: str):
+    varWindSplit = varWindIn.split('V')
+    return 'Wind variable from ' + varWindSplit[0] + ' to ' + varWindSplit[1]
+
+def decodeVisibility(varVis: str):
+    lessThanStr = ""
+    if varVis[0] == 'M':
+        lessThanStr = 'less than '
+        varVis = varVis[1:]
+    
+    return 'Visibility ' + lessThanStr + varVis
+
 if __name__ == '__main__':
     # TODO: Get live data
     input = sys.argv[1]
@@ -42,6 +69,12 @@ if __name__ == '__main__':
     type = decodeType(inputSplit[0])
     stationID = decodeStationID(inputSplit[1])
     dateTime = decodeDateTime(inputSplit[2])
+    wind = decodeWind(inputSplit[3])
+    varWind = decodeVariableWind(inputSplit[4])
+    vis = decodeVisibility(inputSplit[5])
     print("Type:", type)
     print("Station ID:", stationID)
     print("Date and Time:", dateTime)
+    print("Wind: ", wind)
+    print("Variable wind: ", varWind)
+    print("Visibility: ", vis)
